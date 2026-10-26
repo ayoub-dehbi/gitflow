@@ -112,7 +112,7 @@ function updateCart() {
     const total = cart.reduce(
         (sum, product) => sum + product.price,
         0
-    ) + 100;
+    );
 
     cartSection.innerHTML = `
         <div class="cart-box">
