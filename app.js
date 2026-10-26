@@ -35,6 +35,10 @@ function displayProducts(items) {
             <h3>${product.name}</h3>
 
             <p class="price">${product.price} DH</p>
+            <button class="add-btn" onclick="addToCart(${product.id})">
+                🛒 Ajouter au panier
+            </button>
+            
 
         </div>
     `).join("");
@@ -44,9 +48,7 @@ function displayProducts(items) {
 
 // <p class="price">${product.price} DH</p>
 
-// <button class="add-btn" onclick="addToCart(${product.id})">
-//     🛒 Ajouter au panier
-// </button>
+
 
 
 
@@ -85,42 +87,42 @@ displayProducts(products);
 
 // FEATURE: SHOPPING CART
 
-// let cart = [];
+let cart = [];
 
-// function addToCart(productId) {
+function addToCart(productId) {
 
-//     const product = products.find(p => p.id === productId);
+    const product = products.find(p => p.id === productId);
 
-//     cart.push(product);
+    cart.push(product);
 
-//     updateCart();
-// }
+    updateCart();
+}
 
-// function updateCart() {
+function updateCart() {
 
-//     const cartSection = document.getElementById("cart-section");
+    const cartSection = document.getElementById("cart-section");
 
-//     const itemsHTML = cart.map(product => `
-//         <div class="cart-item">
-//             ${product.name} — ${product.price} DH
-//         </div>
-//     `).join("");
+    const itemsHTML = cart.map(product => `
+        <div class="cart-item">
+            ${product.name} — ${product.price} DH
+        </div>
+    `).join("");
 
-//     // BUG INTENTIONNEL
-//     const total = cart.reduce(
-//         (sum, product) => sum + product.price,
-//         0
-//     ) + 100;
+    // BUG INTENTIONNEL
+    const total = cart.reduce(
+        (sum, product) => sum + product.price,
+        0
+    ) + 100;
 
-//     cartSection.innerHTML = `
-//         <div class="cart-box">
-//             <h2>🛒 Mon Panier</h2>
+    cartSection.innerHTML = `
+        <div class="cart-box">
+            <h2>🛒 Mon Panier</h2>
 
-//             ${itemsHTML}
+            ${itemsHTML}
 
-//             <p class="total">
-//                 Total : ${total} DH
-//             </p>
-//         </div>
-//     `;
-// }
+            <p class="total">
+                Total : ${total} DH
+            </p>
+        </div>
+    `;
+}
