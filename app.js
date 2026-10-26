@@ -55,26 +55,26 @@ function displayProducts(items) {
 
 // FEATURE: PRODUCT SEARCH
 
-// document.getElementById("search-area").innerHTML = `
-//     <input
-//         type="text"
-//         id="search"
-//         class="search-input"
-//         placeholder="🔍 Rechercher un produit..."
-//     >
-// `;
+document.getElementById("search-area").innerHTML = `
+    <input
+        type="text"
+        id="search"
+        class="search-input"
+        placeholder="🔍 Rechercher un produit..."
+    >
+`;
 
-// document.getElementById("search").addEventListener("input", function(e) {
+document.getElementById("search").addEventListener("input", function(e) {
 
-//     const keyword = e.target.value.toLowerCase();
+    const keyword = e.target.value.toLowerCase();
 
-//     const filteredProducts = products.filter(product =>
-//         product.name.toLowerCase().includes(keyword)
-//     );
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(keyword)
+    );
 
-//     displayProducts(filteredProducts);
+    displayProducts(filteredProducts);
 
-// });
+});
 
 
 
